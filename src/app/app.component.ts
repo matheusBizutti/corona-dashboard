@@ -280,7 +280,8 @@ export class AppComponent implements OnInit {
     this.selectedCountry = !filter ? '' : this.selectedCountry;
     this.getCOVID19Infos(filter).subscribe(response => {
       this.labels.confirmeds = !this.selectedCountry ? 'Total de casos confirmados' : `Total de casos (${this.selectedCountry})`;
-      this.labels.recovereds = !this.selectedCountry ? 'Total de casos de sucesso' : `Total de casos de sucesso (${this.selectedCountry})`;
+      this.labels.recovereds = !this.selectedCountry ? 'Total de pacientes recuperados'
+        : `Total de pacientes recuperados (${this.selectedCountry})`;
       this.labels.deaths = !this.selectedCountry ? 'Total de mortes' : `Total de mortes (${this.selectedCountry})`;
       this.infos = response;
     });
